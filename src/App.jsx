@@ -83,7 +83,7 @@ const App = () => {
         // If you're familiar with webhooks, it's very similar to that!
         connectedContract.on("NewEpicNFTMinted", (from, tokenId) => {
           console.log(from, tokenId.toNumber())
-          alert(`We've minted your NFT and sent it to your wallet. It can take up to 10 min to show up on OpenSea. Here's the link: https://testnets.opensea.io/assets/mumbai/${CONTRACT_ADDRESS}/${tokenId.toNumber()}`)
+          alert(`We've minted your NFT and sent it to your wallet. Your staking rewards will be deposited in 15 days. Here's the link:\r\n https://testnets.opensea.io/assets/mumbai/${CONTRACT_ADDRESS}/${tokenId.toNumber()}`)
         });
 
         console.log("Setup event listener!")
@@ -147,7 +147,7 @@ const App = () => {
           <p><img src="src/assets/Oktopus.PNG" width='300' height='250' /></p>
           <img src="src/assets/12.PNG" width='300' height='80' />
           <p className="header gradient-text">Welcome to Oktopus</p>
-          
+          <p className="sub-text">Claim your NFT here after finishing your certification process</p>
           {currentAccount === "" ? (
             renderNotConnectedContainer()
           ) : (
