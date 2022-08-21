@@ -9,7 +9,7 @@ const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
 const OPENSEA_LINK = '';
 const TOTAL_MINT_COUNT = 50;
 
-const CONTRACT_ADDRESS = "0xf548ae287FD0df52581c5110887E3e56EC99d1EC";
+const CONTRACT_ADDRESS = "0xd285F32bE388455EfCAdCaD123C60d46e56cd239";
 
 const App = () => {
   const [currentAccount, setCurrentAccount] = useState("");
@@ -127,6 +127,7 @@ const App = () => {
 
   // Render Methods
   const renderNotConnectedContainer = () => (
+    
     <button onClick={connectWallet} className="cta-button connect-wallet-button">
       Connect to Wallet
     </button>
@@ -143,10 +144,10 @@ const App = () => {
     <div className="App">
       <div className="container">
         <div className="header-container">
-          <p className="header gradient-text">Oktopus</p>
-          <p className="sub-text">
-            Each unique. Each beautiful. Discover your NFT today.
-          </p>
+          <p><img src="src/assets/Oktopus.PNG" width='300' height='250' /></p>
+          <img src="src/assets/12.PNG" width='300' height='80' />
+          <p className="header gradient-text">Welcome to Oktopus</p>
+          
           {currentAccount === "" ? (
             renderNotConnectedContainer()
           ) : (
@@ -156,13 +157,9 @@ const App = () => {
           )}
         </div>
         <div className="footer-container">
-          <img alt="Twitter Logo" className="twitter-logo" src={twitterLogo} />
           <a
             className="footer-text"
-            href={TWITTER_LINK}
-            target="_blank"
-            rel="noreferrer"
-          >{`built on @${TWITTER_HANDLE}`}</a>
+          >{`ETH Mexico Hackathon - Demo`}</a>
         </div>
       </div>
     </div>
