@@ -1,13 +1,7 @@
-## Running React on Repl.it
+## Front end demo for Octopus project in ETH Mexico
 
-[React](https://reactjs.org/) is a popular JavaScript library for building user interfaces.
+Oktopus is an educational platform oriented to encourage learning web3 content, learning while staking.
 
-[Vite](https://vitejs.dev/) is a blazing fast frontend build tool that includes features like Hot Module Reloading (HMR), optimized builds, and TypeScript support out of the box.
+Hardhat project can be found in https://github.com/ferdelat/Oktopus1
 
-Using the two in conjunction is one of the fastest ways to build a web app.
-
-### Getting Started
-- Hit run
-- Edit [App.jsx](#src/App.jsx) and watch it live update!
-
-By default, Replit runs the `dev` script, but you can configure it by changing the `run` field in the `.replit` file.
+The project mints an NFT that will be non transferable
