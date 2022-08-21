@@ -13,6 +13,8 @@ const CONTRACT_ADDRESS = "0xf548ae287FD0df52581c5110887E3e56EC99d1EC";
 
 const App = () => {
   const [currentAccount, setCurrentAccount] = useState("");
+  const [isClaiming, setIsClaiming] = useState(false);
+
   
   const checkIfWalletIsConnected = async () => {
     const { ethereum } = window;
@@ -95,7 +97,7 @@ const App = () => {
   }
   
   const askContractToMintNft = async () => {
-  
+  setIsClaiming(true);
 
   try {
     const { ethereum } = window;
@@ -112,11 +114,13 @@ const App = () => {
       await nftTxn.wait();
       
       console.log(`Mined, see transaction: https://mumbai.polygonscan.com//tx/${nftTxn.hash}`);
+      setIsClaiming(false);
 
     } else {
       console.log("Ethereum object doesn't exist!");
     }
   } catch (error) {
+    setIsClaiming(false);
     console.log(error)
   }
 }
@@ -146,8 +150,8 @@ const App = () => {
           {currentAccount === "" ? (
             renderNotConnectedContainer()
           ) : (
-            <button onClick={askContractToMintNft} className="cta-button connect-wallet-button">
-              Mint NFT
+            <button onClick={askContractToMintNft} className="cta-button connect-wallet-button" disabled={isClaiming}>
+              {isClaiming ? "Minting..." : "Mint your NFT"}
             </button>
           )}
         </div>
